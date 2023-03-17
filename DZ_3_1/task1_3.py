@@ -1,6 +1,6 @@
 # домашнє завдання 1_2_3 (я намагалася використати метод input, але в мене не вийшло)
 
-user_input = "Anna"  # слово вводиться в кавичках "" як текст, незалежно від значення
+user_input = input("Write your name: ")  # слово вводиться в кавичках "" як текст, незалежно від значення
 
 if user_input.isalpha():
     print("text: " + str(user_input) + " - " + str(len(user_input)) + " letters")
