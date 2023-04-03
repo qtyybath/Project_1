@@ -38,12 +38,11 @@ customers_pay = [[i[0], i[1]] for i in list(zip(customers, pay_usd))]
 print(customers_pay)
 
 def more_100(n):
-    for i in n:
-        for value in i:
-            if isinstance(value, int) and value > 100000:
-                yield i
+    for customer_and_pay_tuple in n:
+        if customer_and_pay_tuple[1] > 100000:
+            yield i
 
-for i in more_100(customers_pay):
+for i in more_100(zip(customers, pay_usd)):
     print(i)
 
 # задачу прийшлося розбити на три етапи. в першому з'єднала списки у вкладені списки, де значення відвовідають одне одному.
