@@ -5,7 +5,8 @@ import time
 
 def func_decorator(func):
     def wrapper(*args, **kwargs):
-        print(f"This function: {func.__name__} was launched at {time.strftime('%Y-%m-%d %H:%M:%S')} ")
+        for i in range(5):
+            print(f"This function: {func.__name__} was launched at {time.strftime('%Y-%m-%d %H:%M:%S')} ")
         return func(*args, **kwargs)
 
     return wrapper

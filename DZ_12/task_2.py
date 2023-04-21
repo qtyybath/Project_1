@@ -11,12 +11,13 @@ class MyContextManager:
 
     def __exit__(self, exc_type, exc_value, traceback):
         print("=" * 10)
-        if exc_type is not None:  # якщо є помилки, то вони будуть надруковані. Я перевірила і змінила "r" на "а"
-            print(f"Error: {exc_type} - {exc_value}") # /але якщо написати неіснуючий файл - дає помилку
-        return True     # FileNotFoundError(( треба розширювати контексний менеджер, але я ще добре не розумію як
-# наскільки я розумію True має підтвердити факт закріття файлу
+        if exc_type is not None:
+            print(f"Error: {exc_type} - {exc_value}")
+        return True
+
 
 file = open("ame.txt", "r")
+
 
 with MyContextManager():
     print(file.read())
