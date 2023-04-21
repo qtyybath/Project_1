@@ -16,7 +16,7 @@ def func_decorator(func):
 
 data = [6745, 98768, 79847, 98946, 6787, 8467, 86678]
 
-@func_decorator
+@func_decorator(times=2)
 def low_high_sales(x):
     sample = list(filter(lambda i: type(i) is int and i >= 30000, data))
     return sample
