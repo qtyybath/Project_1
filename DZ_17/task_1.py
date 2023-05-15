@@ -43,7 +43,7 @@ class TelegramBot(Bot):
         self.chat_id = chat_id
 
     def send_message(self, message):
-        print(f"{telegram_bot.say_name()} says {message} Come to our chat {self.chat_id} using {self.url}")
+        print(f"{self.name} says {message} Come to our chat {self.chat_id} using {self.url}")
 
 
 telegram_bot = TelegramBot("White rabbit's girlfriend")
