@@ -4,7 +4,15 @@
 class Bot:
     name = "say_name"
     message = "send_message"
-    Bot_type = type("Bot", (), {"name": "say_name", "message": "send_message"})
+    Bot_type = type(
+        "Bot",
+        (),
+        {
+            "__init__": lambda self, name: setattr(self, "name", name),
+            "send_message": lambda self, message: print(message),
+            "say_name": lambda self: print(self.name)
+        }
+    )
 
 
 Bot.name = "Lord of the White rabbits"
